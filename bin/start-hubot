@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# File: start-hubot.sh.j2 - A startup script template for Hubot
+#
+
+# Start Hubot in the background
+
+source /home/hubot/.nvm/nvm.sh
+nvm use 0.12.9
+
+cd /home/hubot/hubot
+source jackbot.env
+
+bin/hubot --adapter slack >> /home/hubot/hubot/log/hubot.log 2>&1
+# bin/hubot --adapter slack
